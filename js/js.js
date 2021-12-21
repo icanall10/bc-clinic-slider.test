@@ -14,17 +14,6 @@
             });
 
 
-        $('.twenty-slider .twenty')
-            .once('twenty')
-            .twentytwenty({
-                default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-                before_label: '',
-                after_label: '',
-                no_overlay: true,
-                click_to_move: false
-            });
-
-
         $('.twenty')
             .once('twenty', function () {
                 let $this = $(this);
