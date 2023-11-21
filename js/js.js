@@ -29,12 +29,11 @@
             })
             .each(function () {
                 let $this = $(this);
-                let img = $this.find('img');
-                let count = img.length;
+                let images = $this.find('img');
+                let count = images.length;
                 let loadedCount = 0;
-                let completedCount = 0;
 
-                img.on('load', function () {
+                images.one('load', function () {
                     loadedCount++;
 
                     if (loadedCount === count) {
@@ -42,15 +41,11 @@
                     }
                 });
 
-                for (const [key, value] of Object.entries(img)) {
-                    if (value.complete) continue;
-
-                    completedCount++;
-                }
-
-                if (completedCount === count) {
-                    $this.trigger('runTwenty');
-                }
+                images.each(function () {
+                    if (this.complete) {
+                        $(this).trigger('load');
+                    }
+                });
             });
 
     }
