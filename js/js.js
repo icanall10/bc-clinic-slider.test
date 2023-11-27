@@ -63,11 +63,6 @@
     }
 
 
-    $(window).resize(function () {
-        console.log(11);
-    });
-
-
     $(document).ready(function () {
         behaviors();
     });
