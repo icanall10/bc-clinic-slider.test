@@ -46,9 +46,26 @@
                         $(this).trigger('load');
                     }
                 });
+
+                let i = 0;
+                let part = 500;
+                let duration = 10000;
+
+                let interval = setInterval(function () {
+                    i += part;
+
+                    if (i >= duration) {
+                        clearInterval(interval);
+                    }
+                }, part);
             });
 
     }
+
+
+    $(window).resize(function () {
+        console.log(11);
+    });
 
 
     $(document).ready(function () {
