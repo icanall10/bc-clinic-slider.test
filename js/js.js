@@ -48,11 +48,13 @@
                 });
 
                 let i = 0;
-                let part = 500;
+                let part = 1000;
                 let duration = 10000;
 
                 let interval = setInterval(function () {
                     i += part;
+
+                    $(window).resize();
 
                     if (i >= duration) {
                         clearInterval(interval);
